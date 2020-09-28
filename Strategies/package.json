@@ -1,0 +1,17 @@
+{
+  "name": "strategies",
+  "version": "1.0.0",
+  "description": "",
+  "main": "strategy.js",
+  "dependencies": {
+    "typescript": "^4.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "tsc --watch",
+    "build": "tsc"
+  },
+  "author": "",
+  "license": "ISC"
+}
