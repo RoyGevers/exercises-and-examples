@@ -1,40 +1,40 @@
-abstract class Strategy_2 {
-    abstract makeSoundStrategy(): string;
+abstract class MakeSoundStrategy_a {
+    abstract makeSound(): string;
 }
 
-class Animal_2 {
-    private soundStrategy: Strategy_2;
+class Animal_a {
+    private soundStrategy: MakeSoundStrategy_a;
 
-    constructor(soundStrategy: Strategy) {
+    constructor(soundStrategy: MakeSoundStrategy) {
         this.soundStrategy = soundStrategy
     }
 
-    public setAnimal(soundStrategy: Strategy) {
+    public setAnimal(soundStrategy: MakeSoundStrategy): void {
         this.soundStrategy = soundStrategy
     }
 
     public makeSound(): string {
-        return this.soundStrategy.makeSoundStrategy()
+        return this.soundStrategy.makeSound()
     }
 }
 
-class Dog_2 extends Strategy_2 {
-    makeSoundStrategy() {
+class Dog_a extends MakeSoundStrategy_a {
+    makeSound(): string {
         return 'woof'
     }
 }
 
-class Cat_2 extends Strategy_2 {
-    makeSoundStrategy() {
+class Cat_a extends MakeSoundStrategy_a {
+    makeSound(): string {
         return 'Miauw'
     }
 }
 
 
-class Knight_2 extends Strategy_2 {
+class Knight_a extends MakeSoundStrategy_a {
     private shrubbery = false;
 
-    makeSoundStrategy() {
+    makeSound(): string {
         this.shrubbery = !this.shrubbery;
         return this.shrubbery ? 'Ni!' : 'Ecky ecky ecky ecky pikang zoom boing!';
     }
@@ -44,13 +44,13 @@ class Knight_2 extends Strategy_2 {
 
 
 window.onload = () => {
-    const animal = new Animal_2(new Dog_2());
+    const animal = new Animal_a(new Dog_a());
     console.log(`a dog says ${animal.makeSound()}`);
 
-    animal.setAnimal(new Cat_2());
+    animal.setAnimal(new Cat_a());
     console.log(`a cat says ${animal.makeSound()}`);
 
-    animal.setAnimal(new Knight_2());
+    animal.setAnimal(new Knight_a());
     console.log(`a cat says ${animal.makeSound()}`);
     console.log(`a cat says ${animal.makeSound()}`);
 

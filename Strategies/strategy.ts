@@ -1,40 +1,40 @@
-interface Strategy {
-    makeSoundStrategy(): string;
+interface MakeSoundStrategy {
+    makeSound(): string; //make sound
 }
 
 class Animal {
-    private soundStrategy: Strategy;
+    private soundStrategy: MakeSoundStrategy;
 
-    constructor(soundStrategy: Strategy) {
+    constructor(soundStrategy: MakeSoundStrategy) {
         this.soundStrategy = soundStrategy
     }
 
-    public setAnimal(soundStrategy: Strategy) {
+    public setAnimal(soundStrategy: MakeSoundStrategy) {
         this.soundStrategy = soundStrategy
     }
 
     public makeSound(): string {
-        return this.soundStrategy.makeSoundStrategy()
+        return this.soundStrategy.makeSound()
     }
 }
 
-class Dog implements Strategy {
-    public makeSoundStrategy(): string {
+class Dog implements MakeSoundStrategy {
+    public makeSound(): string {
         return 'Woof!';
     }
 }
 
-class Cat implements Strategy {
-    public makeSoundStrategy(): string {
+class Cat implements MakeSoundStrategy {
+    public makeSound(): string {
         return 'Miauw!';
     }
 }
 
 
-class Knight implements Strategy {
+class Knight implements MakeSoundStrategy {
     private shrubbery = false;
 
-    public makeSoundStrategy(): string {
+    public makeSound(): string {
         this.shrubbery = !this.shrubbery;
         return this.shrubbery ? 'Ni!' : 'Ecky ecky ecky ecky pikang zoom boing!';
     }

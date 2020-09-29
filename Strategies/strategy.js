@@ -7,14 +7,14 @@ var Animal = /** @class */ (function () {
         this.soundStrategy = soundStrategy;
     };
     Animal.prototype.makeSound = function () {
-        return this.soundStrategy.makeSoundStrategy();
+        return this.soundStrategy.makeSound();
     };
     return Animal;
 }());
 var Dog = /** @class */ (function () {
     function Dog() {
     }
-    Dog.prototype.makeSoundStrategy = function () {
+    Dog.prototype.makeSound = function () {
         return 'Woof!';
     };
     return Dog;
@@ -22,7 +22,7 @@ var Dog = /** @class */ (function () {
 var Cat = /** @class */ (function () {
     function Cat() {
     }
-    Cat.prototype.makeSoundStrategy = function () {
+    Cat.prototype.makeSound = function () {
         return 'Miauw!';
     };
     return Cat;
@@ -31,7 +31,7 @@ var Knight = /** @class */ (function () {
     function Knight() {
         this.shrubbery = false;
     }
-    Knight.prototype.makeSoundStrategy = function () {
+    Knight.prototype.makeSound = function () {
         this.shrubbery = !this.shrubbery;
         return this.shrubbery ? 'Ni!' : 'Ecky ecky ecky ecky pikang zoom boing!';
     };

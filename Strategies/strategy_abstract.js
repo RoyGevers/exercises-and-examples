@@ -12,62 +12,62 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-var Strategy_2 = /** @class */ (function () {
-    function Strategy_2() {
+var MakeSoundStrategy_a = /** @class */ (function () {
+    function MakeSoundStrategy_a() {
     }
-    return Strategy_2;
+    return MakeSoundStrategy_a;
 }());
-var Animal_2 = /** @class */ (function () {
-    function Animal_2(soundStrategy) {
+var Animal_a = /** @class */ (function () {
+    function Animal_a(soundStrategy) {
         this.soundStrategy = soundStrategy;
     }
-    Animal_2.prototype.setAnimal = function (soundStrategy) {
+    Animal_a.prototype.setAnimal = function (soundStrategy) {
         this.soundStrategy = soundStrategy;
     };
-    Animal_2.prototype.makeSound = function () {
-        return this.soundStrategy.makeSoundStrategy();
+    Animal_a.prototype.makeSound = function () {
+        return this.soundStrategy.makeSound();
     };
-    return Animal_2;
+    return Animal_a;
 }());
-var Dog_2 = /** @class */ (function (_super) {
-    __extends(Dog_2, _super);
-    function Dog_2() {
+var Dog_a = /** @class */ (function (_super) {
+    __extends(Dog_a, _super);
+    function Dog_a() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    Dog_2.prototype.makeSoundStrategy = function () {
+    Dog_a.prototype.makeSound = function () {
         return 'woof';
     };
-    return Dog_2;
-}(Strategy_2));
-var Cat_2 = /** @class */ (function (_super) {
-    __extends(Cat_2, _super);
-    function Cat_2() {
+    return Dog_a;
+}(MakeSoundStrategy_a));
+var Cat_a = /** @class */ (function (_super) {
+    __extends(Cat_a, _super);
+    function Cat_a() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    Cat_2.prototype.makeSoundStrategy = function () {
+    Cat_a.prototype.makeSound = function () {
         return 'Miauw';
     };
-    return Cat_2;
-}(Strategy_2));
-var Knight_2 = /** @class */ (function (_super) {
-    __extends(Knight_2, _super);
-    function Knight_2() {
+    return Cat_a;
+}(MakeSoundStrategy_a));
+var Knight_a = /** @class */ (function (_super) {
+    __extends(Knight_a, _super);
+    function Knight_a() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.shrubbery = false;
         return _this;
     }
-    Knight_2.prototype.makeSoundStrategy = function () {
+    Knight_a.prototype.makeSound = function () {
         this.shrubbery = !this.shrubbery;
         return this.shrubbery ? 'Ni!' : 'Ecky ecky ecky ecky pikang zoom boing!';
     };
-    return Knight_2;
-}(Strategy_2));
+    return Knight_a;
+}(MakeSoundStrategy_a));
 window.onload = function () {
-    var animal = new Animal_2(new Dog_2());
+    var animal = new Animal_a(new Dog_a());
     console.log("a dog says " + animal.makeSound());
-    animal.setAnimal(new Cat_2());
+    animal.setAnimal(new Cat_a());
     console.log("a cat says " + animal.makeSound());
-    animal.setAnimal(new Knight_2());
+    animal.setAnimal(new Knight_a());
     console.log("a cat says " + animal.makeSound());
     console.log("a cat says " + animal.makeSound());
 };
